@@ -1,7 +1,7 @@
 <template>
   <div class="modal flex">
     <div class="modal-content">
-      <p>Are you sure you want to exit? Your changes will not be saved</p>
+      <p>Are you sure you want to exit? Your changes will not be saved?</p>
       <div class="actions flex">
         <button @click="closeModal" class="purple">Return</button>
         <button @click="closeInvoice" class="red">Close</button>
@@ -15,11 +15,11 @@ import { mapMutations, mapState } from "vuex";
 export default {
   name: "Modal",
   methods: {
-    ...mapMutations(['TOGGLE_MODAL', 'TOGGLE_INVOICE', 'TOGGLE_EDIT_INVOICE']),
+    ...mapMutations(["TOGGLE_MODAL", "TOGGLE_INVOICE", "TOGGLE_EDIT_INVOICE"]),
     closeModal() {
       this.TOGGLE_MODAL();
     },
-    closeInvoice(){
+    closeInvoice() {
       this.TOGGLE_MODAL();
       this.TOGGLE_INVOICE();
       if (this.editInvoice) {
@@ -28,9 +28,9 @@ export default {
     },
   },
   computed: {
-    ...mapState(['editInvoice'])
-  }
-}
+    ...mapState(["editInvoice"]),
+  },
+};
 </script>
 
 <style lang="scss" scoped>
